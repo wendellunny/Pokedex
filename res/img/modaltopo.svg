@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="552.218" height="180.766" viewBox="0 0 552.218 180.766">
+  <g id="Grupo18" transform="translate(-415.5 -466.195)">
+    <g id="Retângulo_4" data-name="Retângulo 4" transform="translate(415.5 466.195)" fill="#bd3736" stroke="red" stroke-width="1">
+      <rect width="552.218" height="123.45" stroke="none"/>
+      <rect x="0.5" y="0.5" width="551.218" height="122.45" fill="none"/>
+    </g>
+    <g id="Retângulo_5" data-name="Retângulo 5" transform="translate(415.5 567.545)" stroke="#707070" stroke-width="1">
+      <rect width="552.218" height="22.045" stroke="none"/>
+      <rect x="0.5" y="0.5" width="551.218" height="21.045" fill="none"/>
+    </g>
+    <g id="Elipse_1" data-name="Elipse 1" transform="translate(630.435 525.716)" fill="#fff" stroke="#000" stroke-width="20">
+      <ellipse cx="61.174" cy="60.623" rx="61.174" ry="60.623" stroke="none"/>
+      <ellipse cx="61.174" cy="60.623" rx="51.174" ry="50.623" fill="none"/>
+    </g>
+  </g>
+</svg>

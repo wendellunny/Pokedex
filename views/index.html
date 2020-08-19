@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Online</title>
+    <!-- Jquery -->
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="/vendor/jquery/jquery.js"></script>
+    <script src="/res/script/script.js"></script>
+    <link rel="stylesheet" href="/res/style/style.css">
+</head>
+<body>
+    <header class="menu-bg">
+      <div class="menu">
+          <div class="menu-logo">
+              <a href="/"><img src="/res/img/brand.svg" alt=""></a>  
+          </div>
+          <nav class="menu-nav">
+            <ul>
+                <li>Login/Register</li>
+            </ul>
+        </nav>
+      </div>
+
+       <!-- hero -->
+        <div class="hero">
+            <h1>Sua Pokedex Online Acessível onde for</h1>
+            <a href="#">Entre Na Sua Pokedex</a>
+        </div>
+    </header>
+
+
+    <!-- About Pokedex -->
+    <h1 class="title-about">Pokedex Online</h1>
+
+    <div class="about">
+        <div class="item-about">
+            <img src="/res/img/pokeball-item.svg" alt="">
+            <h2>Todos pokemons disponíveis</h2>
+        </div>
+        <div class="item-about">
+            <img src="/res/img/pokeball-item.svg" alt="">
+            <h2>Adicione pokemons a sua conta</h2>
+        </div>
+        <div class="item-about">
+            <img src="/res/img/pokeball-item.svg" alt="">
+            <h2>Acesse a sua pokedex em qualquer lugar</h2>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer-bg">
+        <div class="footer">
+            <div class="item-footer">
+                <div class="copy">
+                    <p>Projeto desenvolvido por</p>
+                    <h1>Wendel Lunny</h1>
+                </div>    
+            </div>
+            <div class="item-footer">
+                <div class="sobre-footer">
+                    <ul>
+                        <li>UI</li>
+                        <li>BackEnd</li>
+                        <li>FrontEnd</li>
+                        <li>GitHub</li> 
+                    </ul>
+                    <ul>
+                        <li>WendelLunny</li>
+                        <li>WendelLunny</li>
+                        <li>WendelLunny</li>
+                        <li>wendellunny</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- Modal Login Register -->
+
+    <div class="modal-bg login">
+        <div class="modal">
+            <div class="modal-top">
+                <div class="modal-top-text">
+                    <h1>Fazer Login</h1>
+                </div>
+                <div class="modal-top-img">
+                    <img src="/res/img/modaltopo.svg" alt="">
+                </div>
+            </div>
+
+            <div class="modal-content">
+                <form action="/login" method = "post" id="login-post">
+                    <div class="input-login">
+                        <label for="">Login</label><br>
+                        <input type="text" placeholder="Insira seu login" name="user">
+                        
+                    </div>
+    
+                    <div class="input-login">
+                        <label for="">Senha</label>
+                        <input type="password" placeholder="Insira sua senha" name="pass">
+                        <input type="hidden" name="islogin" value="1">
+                    </div>
+                    
+                    <div class="input-enviar">
+                        <button type="sumbit" name="submit">Entrar</button>
+                        <p>Não possui uma conta? Registre-se</p>
+                    </div>
+
+                    <div class="error">
+                        <p></p>
+                    </div>
+                   
+                    
+                </form>
+            </div>
+            <div class="login-error">
+                <p>Você está logado</p>
+            </div>
+            <div class="close">X</div> 
+        </div>
+        
+    </div>
+    
+    <div class="modal-bg register">
+        <div class="modal">
+            <div class="modal-top">
+                <div class="modal-top-text">
+                    <h1>Registrar</h1>
+                </div>
+                <div class="modal-top-img">
+                    <img src="/res/img/modaltopo.svg" alt="">
+                </div>
+            </div>
+
+            <div class="modal-content">
+                <form action="/register" method="post" id="register-post">
+                    <div class="input-login">
+                        <label for="">Login</label><br>
+                        <input type="text" name ="user"  placeholder="Registre um login">
+                    </div>
+    
+                    <div class="input-login">
+                        <label for="">Senha</label>
+                        <input  type="password"  placeholder="Registre uma senha" name = "pass">
+                        <input type="hidden" name="islogin" value="0">
+                    </div>
+                    
+                    <div class="input-enviar">
+                        <button type="submit" name="submit">Registrar</button>
+                        <p>Já possui uma conta? Faça Login</p>
+                    </div>
+                    
+                    <div class="error">
+                        <p></p>
+                    </div>
+
+                    
+                </form>
+            </div>
+            <div class="login-error">
+                <p>Você está logado</p>
+            </div>
+            <div class="close">X</div> 
+        </div>
+        
+    </div>
+
+    <div class="menu-login-bg">
+        <div class="menu-login">
+            <div class="photo">
+                <img src="/res/img/user-default.jpg" alt="" srcset="">
+                <p>Nome</p>
+            </div>
+            <div class="options">
+                <div class="menu-login-item"><a href="">Todos Pokemons</a></div>
+                <div class="menu-login-item"><a href="">Meus Pokemons</a></div>
+                <div class="menu-login-item"><a href="/logout">Sair</a> </div> 
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
