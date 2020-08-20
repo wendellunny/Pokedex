@@ -1,0 +1,18 @@
+<svg id="pokemon_1_" data-name="pokemon (1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.089" y1="1.249" x2="-0.047" y2="1.229" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path id="Caminho_16" data-name="Caminho 16" d="M35,0A35,35,0,1,0,70,35,35.04,35.04,0,0,0,35,0Z" fill="#303c42"/>
+  <path id="Caminho_17" data-name="Caminho 17" d="M54.438,21.333A32.126,32.126,0,0,1,86.36,50.222a87.726,87.726,0,0,1-17.487,1.724,14.5,14.5,0,0,0-28.869,0,87.726,87.726,0,0,1-17.487-1.724A32.126,32.126,0,0,1,54.438,21.333Z" transform="translate(-19.438 -18.416)" fill="#e53935"/>
+  <circle id="Elipse_6" data-name="Elipse 6" cx="12" cy="12" r="12" transform="translate(23 23)" fill="#455a64"/>
+  <path id="Caminho_18" data-name="Caminho 18" d="M53.416,286.559a32.12,32.12,0,0,1-32.083-32.083c0-.081.012-.16.012-.241a91.888,91.888,0,0,0,17.633,1.675,14.5,14.5,0,0,0,28.877,0,91.888,91.888,0,0,0,17.633-1.675c0,.081.012.16.012.241A32.12,32.12,0,0,1,53.416,286.559Z" transform="translate(-18.416 -219.475)" fill="#fff"/>
+  <circle id="Elipse_7" data-name="Elipse 7" cx="8" cy="8" r="8" transform="translate(27 27)" fill="#303c42"/>
+  <circle id="Elipse_8" data-name="Elipse 8" cx="6" cy="6" r="6" transform="translate(29 29)" fill="#f2f2f2"/>
+  <path id="Caminho_19" data-name="Caminho 19" d="M214.487,220.928a5.818,5.818,0,0,1,10.065-3.991,5.827,5.827,0,1,0-9.619,6.22A5.8,5.8,0,0,1,214.487,220.928Z" transform="translate(-184.166 -184.166)" fill="#fff" opacity="0.2"/>
+  <path id="Caminho_20" data-name="Caminho 20" d="M35,0A35,35,0,1,0,70,35,35.04,35.04,0,0,0,35,0Z" fill="url(#linear-gradient)"/>
+  <path id="Caminho_21" data-name="Caminho 21" d="M419.572,105.539c2.878-.349,4.946-.747,6.117-1.007a32.018,32.018,0,0,0-10.1-20.287,31.224,31.224,0,0,1,3.986,21.294Z" transform="translate(-358.768 -72.727)" opacity="0.1"/>
+  <path id="Caminho_22" data-name="Caminho 22" d="M113.234,254.234c-1.442.307-3.772.719-6.9,1.059A31.99,31.99,0,0,1,53.474,270.6a32.055,32.055,0,0,0,59.772-16.129C113.246,254.394,113.235,254.315,113.234,254.234Z" transform="translate(-46.163 -219.475)" opacity="0.1"/>
+</svg>

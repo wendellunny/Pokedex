@@ -44,6 +44,16 @@ $app->get('/verifylogin',function(){
     echo json_encode($json);
 });
 
+$app->get('/pokemon-list',function(){
+    require_once("views/pokemon-list.html");
+});
+$app->get('/my-pokemons',function(){
+    require_once("views/my-pokemons.html");
+});
+$app->get('/profile',function(){
+    require_once("views/profile.html");
+});
+
 
 
 $app->run();
