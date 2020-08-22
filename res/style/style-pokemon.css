@@ -29,16 +29,19 @@ img{
 
 /* Menu */
 
-.menus{
-    position:fixed;
-    left:0px;
-}
+
 
 .menu-bg{
+    box-shadow: 1px 1px 9px black;
+    z-index: 1;
     background: #1EBFFE;
+    position: fixed;
+    left:0;
+    top:0;
 }
 
 .menu{
+    
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +61,8 @@ img{
     height: 69.75px;
 }
 
-.menu-bg a{
+.menu-bg p{
+    cursor:pointer;
     color:white;
     font-size: 1.4em;
     
@@ -72,10 +76,12 @@ img{
 
 
 .lateral-menu{
+    box-shadow: 1px 1px 7px black;
     background: #DC586E;
-
-
-    
+    position: fixed;
+    left:0;
+    top:55px;
+    z-index: 0;
     height: calc(100vh - 55px);
     max-width: 238.5px;
     flex-wrap: wrap;
@@ -127,11 +133,254 @@ img{
     background:#A64253;
 }
 
+.profile-selected{
+    background-color:rgba(0,0,0,0.3);
+    border-radius:50%;
+    
+   
+}
+
 /* Body */
 
 
 .body-pokedex{
+    position:relative;
+    z-index: 0;
     margin-left: 238.5px;
     max-width: calc(100vw - 238.5px);
     padding-top: 55px;
+    
 }
+
+.search{
+    position:relative;
+    z-index: 0;
+    padding: 0 20px;
+    display:flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.search input{
+    font-family: 'Asap Condensed','Arial','sans-serif';
+    color:#3A3A3A;
+    font-size:1.2em;
+    text-align: center;
+    border-radius:7.3px;
+    width: 700px;
+    height: 40.3px;
+}
+
+input:focus{
+    border:solid 1px #298DEF;
+    box-shadow:0px 0px 5px #298DEF ;
+    outline: 0;
+   
+}
+
+.search button{
+    border:none;
+    background:#1EBFFE;
+    border-radius: 7.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92.75px;
+    height: 40.3px;
+}
+button:focus{
+    outline: 0;
+    box-shadow:0px 0px 5px #298DEF ;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+.search img{
+    width: 29.8px;
+    height: 23.5px;
+}
+
+
+
+/* Pokemon List */
+
+.pokemon-list{
+    position:relative;
+    z-index: 0;
+    display:flex;
+    flex-wrap:wrap;
+   
+}
+.cards{
+    box-shadow: 3px 1px 10px black;
+    z-index: -1;
+    position: relative;
+    background:#707070;
+    max-width: 139px;
+    height: 192px;
+    border-radius:18px;
+    margin:20px;
+}
+.img-card{
+    display:flex;
+    justify-content: center;
+}
+.cards span{
+    top:95px;
+    position: absolute;
+    color:white;
+    font-weight: none;
+    font-size: 1.25em;
+    font-style:italic;
+}
+.cards img{
+    
+    max-width: 139px;
+    height: 139px;
+}
+
+
+.buttons-card{
+    top:127px;
+    position:absolute;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-card button{
+    width:84.5px;
+    height: 16.1px;
+    font-family: 'Asap Condensed','Arial','sans-serif';
+    font-size:0.7em;
+    font-weight: bold;
+    color:white;
+    border:none;
+    background:#1EBFFE;
+    margin: 5px;
+}
+
+/* modal pokemon details */
+
+
+.modal-pokemon-bg{
+    
+    z-index: 3;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: rgba(0,0,0,0.4);
+    width:100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+}
+
+.modal-pokemon{
+    width:301px;
+    height: 300px;
+    background:white;
+    position:relative;
+    box-shadow: 1px 1px 15px black;
+}
+
+.modal-pokemon-img{
+    position:absolute;
+    top:-150px
+}
+.modal-pokemon-img img{
+    max-width: 378px;
+    height: 280px;
+}
+
+
+.info{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:30px;
+}
+.info div{
+    margin-bottom:30px;
+    width:65%;
+    padding-top:20px;
+
+}
+.abilities{
+    border-top:solid 2px black;
+}
+.info p{
+    text-align: center;
+}
+.info h2{
+    text-align: center;
+}
+
+
+
+/* Options User */
+
+.options-user-bg{
+    /* display:none; */
+    opacity: 1;
+    position:fixed;
+    width:100vw;
+    height: 100vh;
+    left:0;
+    top:0;
+    
+    z-index:0;
+    transition:.4s;
+}
+
+
+.back img,.exit img{
+    width:36px;
+    height: 36px;
+}
+.icon-back,.icon-exit{
+    width:36px;
+    height: 36px;
+}
+.back p,.exit p{
+   color:white;
+   margin-left:5px;
+   font-size:1.10em;
+   font-weight: bold;
+}
+
+.options-user{
+    position:absolute;
+  
+    left:calc(100vw - 232px);
+    top:55px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:232px;
+    height: 103px;
+    background: #1EBFFE;
+}
+
+.options-user div{
+    cursor:pointer;
+    margin-left:5px;
+    align-items: center;
+    margin-top:3px;
+    display:flex;
+    justify-content: flex-start;
+    
+}
+
+.options-user-animate{
+    display:none;
+    opacity: 0;
+    top: -103px;
+}
+
+
+
+

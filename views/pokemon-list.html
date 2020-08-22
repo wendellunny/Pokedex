@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos Pokemons</title>
+    <script src="/vendor/jquery/jquery.js"></script>
     <link rel="stylesheet" href="/res/style/style-pokemon.css">
+    <script src="/res/script/script-pokemon.js"></script>
+    
 </head>
 <body>
     <!-- Navbar -->
-    <div class="menus">
+
         <header class="menu-bg">
             <div class="menu">
                 <div class="icon-menu pokedex-logo">
@@ -18,7 +21,7 @@
                     <img src="/res/img/pokeball-logo.svg" alt="">
                 </div>
                 <div class="menu-username">
-                    <a href="">username</a>
+                    <p>username</p>
                 </div>
             </div>
         </header>  
@@ -40,13 +43,311 @@
                 </ul>
             </div>
         </div>
-    </div>
+    
 
 
     <div class="body-pokedex">
+        <div class="search">
+           
+            <input type="text">
+            <button><img src="/res/img/search.svg" alt=""></button>
+            
+            
+        </div>
+
+        <div class="pokemon-list">
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="img-card">
+                    <img src="/res/img/bulbassaur.svg" alt="">
+                    <span>Bulbassaur</span>
+                </div>
+                <div class="buttons-card">
+                    <button class="add">ADICIONAR</button>
+                    <button class="more">DETALHES</button>
+                </div>
+            </div>
+        </div>
         
 
 
+    </div>
+
+
+    <div class="modal-pokemon-bg">
+        <div class="modal-pokemon">
+            <div class="modal-pokemon-img">
+                <img src="/res/img/bulbassaur.svg" alt="">
+            </div>
+            <div class="info">
+                <div class="name">
+                    <p>Nome</p>
+                    <h2>Bulbasaur</h2>
+                </div>
+                <div class="abilities">
+                    <p>Habilidades</p>
+                    <h2>overgrow</h2>
+                    <h2>chlorophyll</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="options-user-bg options-user-animate">
+        <div class="options-user">
+            <div class="back">
+                <div class="icon-back">
+                    <img src="/res/img/back.svg" alt="">
+                </div>
+                <div><p>Voltar para o site</p></div>
+                
+            </div>
+            <div class="exit">
+                <div class="icon-exit">
+                    <img src="/res/img/exit.svg" alt="">
+                </div>
+                <div><p>Sair</p></div>
+        </div>
     </div>
    
 
