@@ -250,7 +250,19 @@ button:hover{
     justify-content: center;
 }
 
-.buttons-card button{
+.more{
+    width:84.5px;
+    height: 16.1px;
+    font-family: 'Asap Condensed','Arial','sans-serif';
+    font-size:0.7em;
+    font-weight: bold;
+    color:white;
+    border:none;
+    background:#1EBFFE;
+    margin: 5px;  
+}
+
+.add{
     width:84.5px;
     height: 16.1px;
     font-family: 'Asap Condensed','Arial','sans-serif';
@@ -262,7 +274,54 @@ button:hover{
     margin: 5px;
 }
 
+.remove{
+    width:84.5px;
+    height: 16.1px;
+    font-family: 'Asap Condensed','Arial','sans-serif';
+    font-size:0.7em;
+    font-weight: bold;
+    color:white;
+    border:none;
+    background:#DC586E;
+    margin: 5px;       
+}
+.remove:hover{
+    background:black;   
+    color:white;
+}
+.more:hover{
+    background:#DC586E;
+}
+.add:hover{
+    background:#DC586E;
+}
+.loading-pokemons{
+    display:flex;
+    justify-content: center;
+}
+
+.loading-pokemons img{
+    max-width: 250px;
+    height: 169px;
+}
+
 /* modal pokemon details */
+.name {
+    background:white;
+    box-shadow:1px 1px 10px black;
+    color:#A64253;
+    text-shadow:1px,1px,10px,black;
+    position:relative;
+    border-radius:5px;
+    z-index:5;
+    margin-top:75px;
+    
+}
+
+.abilities{
+    padding-top: 20px;
+}
+
 
 
 .modal-pokemon-bg{
@@ -289,13 +348,12 @@ button:hover{
 
 .modal-pokemon-img{
     position:absolute;
-    top:-150px
+    top:-130px
 }
 .modal-pokemon-img img{
-    max-width: 378px;
-    height: 280px;
+    max-width: 348px;
+    height: 250px;
 }
-
 
 .info{
     display:flex;
@@ -305,9 +363,7 @@ button:hover{
 }
 .info div{
     margin-bottom:30px;
-    width:65%;
-    padding-top:20px;
-
+    width:65%;  
 }
 .abilities{
     border-top:solid 2px black;
@@ -319,8 +375,6 @@ button:hover{
     text-align: center;
 }
 
-
-
 /* Options User */
 
 .options-user-bg{
@@ -331,11 +385,9 @@ button:hover{
     height: 100vh;
     left:0;
     top:0;
-    
     z-index:0;
     transition:.4s;
 }
-
 
 .back img,.exit img{
     width:36px;
@@ -379,6 +431,85 @@ button:hover{
     display:none;
     opacity: 0;
     top: -103px;
+}
+
+
+ /* Media Queries */ 
+
+
+
+/* Menu Mobile */
+
+.menu-mobile{
+    display:none;
+    justify-content: center;
+    background:#DC586E;
+    position:fixed;
+    left:0;
+    top: calc(100vh - 80px);
+    z-index:5000;
+    width:100vw;
+    height: 80px;
+}
+
+.items-menu-mobile{
+    position:fixed;
+    align-items: center;
+    height: 80px;
+    display:flex;
+    width:75%;
+    justify-content: space-between;
+}
+
+.menu-mobile img{
+    width:40px;
+    height: 40px;
+    
+
+}
+
+.items-menu-mobile p{
+    color:white;
+    font-weight: bold;
+}
+.items-menu-mobile a{
+    flex-direction: column;
+    display:flex;
+    align-items: center;
+
+}
+.items-menu-mobile div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+}
+.items-menu-mobile-active{
+    background: #A64253;
+    
+
+}
+
+.img-user-menu-mobile img{
+    border-radius:50%;
+}
+
+@media(max-width:900px){
+    .lateral-menu{
+        display:none;
+    }
+    .body-pokedex{
+        margin-left:0;
+        max-width: 100vw;
+        margin-bottom: 80px;
+    }
+    .cards{
+        margin:10px;
+    }
+    .menu-mobile{
+        display:flex;
+    }
 }
 
 

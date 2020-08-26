@@ -36,7 +36,7 @@ img{
 
 .menu-bg{
     background-image: url("/res/img/hero.png");
-    background-size: 1325px ;
+    background-size: 100% ;
 }
 
 .menu{
@@ -283,7 +283,6 @@ img{
 
     }
     .sobre-footer ul:nth-of-type(1){
-        
         margin-right: 100px;
     }
 
@@ -480,8 +479,6 @@ button:focus{
     box-shadow: 2px 2px 5px black;
     
 }
-
-
 
 .photo{
     margin-top: 60px;

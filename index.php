@@ -4,6 +4,7 @@ require_once("vendor/autoload.php");
 use \Slim\Slim;
 use \Pokedex\DB\Sql;
 use \Pokedex\Model\User;
+use \Pokedex\Model\Pokemon;
 
 $app = new Slim();
 $app->config('debug', true);
@@ -44,15 +45,78 @@ $app->get('/verifylogin',function(){
     echo json_encode($json);
 });
 
+
 $app->get('/pokemon-list',function(){
-    require_once("views/pokemon-list.html");
+    $verify = User::VerifyLogin();
+    if($verify['loginOn']==true){
+        require_once("views/pokemon-list.html");
+    }else{
+        header("Location: /");
+        exit;
+    }
+   
 });
 $app->get('/my-pokemons',function(){
-    require_once("views/my-pokemons.html");
+    $verify = User::VerifyLogin();
+    if($verify['loginOn']==true){
+        require_once("views/my-pokemons.html");
+    }else{
+        header("Location: /");
+        exit;
+    }
+    
 });
 $app->get('/profile',function(){
-    require_once("views/profile.html");
+    $verify = User::VerifyLogin();
+    if($verify['loginOn']===true){
+        require_once("views/profile.html");
+    }else{
+        header("Location: /");
+        exit;
+    }
+    
 });
+
+
+$app->get("/addpokemon/:idpokemon",function($idpokemon){
+    $verifyLogin = User::VerifyLogin();
+    if($verifyLogin['loginOn']===true){
+        $pokemon = new Pokemon();
+        $pokemon->setIdPokemon($idpokemon);
+        $pokemon->setIdUser($_SESSION['iduser']);
+        $verifyPokemon= $pokemon->verifyPokemonAdd();
+        if((bool)$verifyPokemon===false){
+            $pokemon->addPokemon();
+        }
+       
+    }
+    
+});
+$app->get("/deletepokemon/:idpokemon",function($idpokemon){
+    $verifyLogin = User::VerifyLogin();
+    if($verifyLogin['loginOn']===true){
+        $pokemon = new Pokemon();
+        $pokemon->setIdPokemon($idpokemon);
+        $pokemon->setIdUser($_SESSION['iduser']);
+        $verifyPokemon= $pokemon->verifyPokemonAdd();
+        $pokemon->deletePokemon();
+        
+       
+    }
+    
+});
+
+$app->get("/getmypokemons",function(){
+    $verifyLogin = User::VerifyLogin();
+    if($verifyLogin['loginOn']===true){
+        $pokemon= new Pokemon();
+        $pokemonList = $pokemon->getmypokemons();
+        header('Content-Type: application/json');
+        echo json_encode($pokemonList);
+    } 
+});
+
+
 
 
 

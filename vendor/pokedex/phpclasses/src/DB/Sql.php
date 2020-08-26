@@ -41,7 +41,7 @@ class Sql{
 
         $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        if(isset($results[0])){
+        if(isset($results[0]) && count($results)==1){
             return $results[0];
         }else{
             return $results;

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos Pokemons</title>
+    <script src="/vendor/jquery/jquery.js"></script>
     <link rel="stylesheet" href="/res/style/style-pokemon.css">
+    <script src="/res/script/script-pokemon.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -18,7 +20,7 @@
                     <img src="/res/img/pokeball-logo.svg" alt="">
                 </div>
                 <div class="menu-username">
-                    <a href="">username</a>
+                    <p></p>
                 </div>
             </div>
         </header>  
@@ -41,12 +43,69 @@
             </div>
         </div>
 
+        <div class="menu-mobile">
+            <div class="items-menu-mobile">
+                
+    
+                <div >
+                    <a href="/pokemon-list"><img src="/res/img/all-pokemons.svg" alt=""><p>Todos Pokemons</p> </a>
+                </div>
+                <div>
+                    <a href="/my-pokemons"><img src="/res/img/my-pokemons.svg" alt=""> <p>Meus Pokemons</p>  </a>
+                </div>
+                <div class="img-user-menu-mobile items-menu-mobile-active" >
+                    <a href="/profile"><img src="/res/img/user-default.jpg" alt=""> <p></p> </a>
+                </div>
+                 
+              
+    
+            </div>
+    
+        </div>
 
-
-    <div class="body-pokedex">
         
 
 
+
+    <div class="body-pokedex">
+        <div class="profile-pokedex">
+            <div class="user-edit">
+                <h2>Usuário</h2>
+                <div class="username-edit">
+                    <p>Username</p>
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="photo-edit">
+                <img src="" alt="">
+                <form action="" method="post">
+                    <input type="file">;
+                </form>
+                
+            </div>
+        </div>    
+
+
+    </div>
+    <div class="options-user-bg options-user-animate">
+        <div class="options-user">
+            <a href="/">
+                <div class="back">
+                    <div class="icon-back">
+                        <img src="/res/img/back.svg" alt="">
+                    </div>
+                    <div><p>Voltar para o site</p></div>
+                
+                </div>
+            </a>    
+            <a href="/logout">
+                <div class="exit">
+                    <div class="icon-exit">
+                        <img src="/res/img/exit.svg" alt="">
+                    </div>
+                    <div><p>Sair</p></div>
+                </div>
+            </a>
     </div>
    
 
