@@ -116,6 +116,9 @@ img{
  
     margin: 30px 0;
 }
+.lateral-menu-items li:hover{
+    background: #A64253;
+}
 
 .lateral-menu-items span{
     color:white;
@@ -128,7 +131,9 @@ img{
     max-width: 58px;
     height: 46.9px
 }
-
+.profile-selected:hover{
+    box-shadow: 5px 5px 5px #722e39;
+}
 .lateral-menu-active{
     background:#A64253;
 }
@@ -495,6 +500,169 @@ button:hover{
     border-radius:50%;
 }
 
+
+/*Edit Profile*/
+
+.profile-pokedex{
+    margin-top:100px; 
+    padding:0 130px;
+    display:flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+.username-edit{
+    display:flex;
+}
+.username-edit img{
+    max-width:25.6px;  
+    height: 25.6px;
+}
+.image img{
+    box-shadow: 1px 1px 5px black;
+    max-width: 265px;   
+    height: 265px;  
+    border-radius:50%; 
+}
+
+.button-select-image .back-select-img{
+    width: 233.5px;
+    /* position:absolute; */
+    top:100%;
+    left:0;
+   
+}
+
+.select-img{
+    position:relative;
+    left: calc(50% - 15px);
+    top:-45px;
+    cursor:pointer;
+    
+}
+
+.button-select-image {
+    top:calc(100% - 68px);
+    position: absolute;
+    /* width: 233.5px;
+    position:absolute;
+    top:100%;
+    left:0; */
+   
+}
+/* .button-select-image {
+    width: 233.5px;
+    position:relative;
+    top:100%;
+    left:0;
+    */
+/* } */
+.img-edit{
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.photo-edit form{
+    /*  */
+    display:none;
+}
+
+.photo-edit p {
+    color:red;
+    text-align: center;
+    margin-top:5px;
+}
+
+.modal-selected-img-bg{
+    display:none;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    position:fixed;
+    left: 0;
+    top:0;
+    z-index: 6000;
+}
+
+.modal-selected-img{
+    background:white;
+    width:400px;
+    padding-top: 10px;
+    box-shadow: 0px 0px 5px black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.selected-img .img{
+    
+    max-width: 260px;
+    /* height: 500px; */
+
+}
+.selected-img{
+    position: relative;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.buttons-modal-selected-img button{
+    border:none;
+    width:130px;
+    height: 65px;
+    margin: 0 10px;
+    font-size: 1em;
+    font-family: 'Asap Condensed','Arial','sans-serif'; 
+    /* font-weight: bold; */
+    font-stretch: normal;
+    
+}
+
+.cancel{
+    background: #DC586E;
+    color:white;
+}
+
+.confirm{
+    background:#42BD59;
+    color:white;
+}
+.buttons-modal-selected-img {
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+   
+
+}
+
+.selector{
+    position: absolute;
+    width:100px;
+    height: 100px;
+    left: calc (50% - 25px);
+
+    background: rgba(0,0,0,0);
+    border: dotted 2px #DC586E;
+    box-shadow: 0px 0px 100px black;
+
+}
+.selector-size{
+    position:absolute;
+    left: -7px;
+    top: -7px;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background: #DC586E;
+}
+
+
+
 @media(max-width:900px){
     .lateral-menu{
         display:none;
@@ -511,6 +679,8 @@ button:hover{
         display:flex;
     }
 }
+
+
 
 
 

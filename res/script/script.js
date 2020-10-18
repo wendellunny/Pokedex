@@ -24,6 +24,11 @@ function refreshUser(){
             $(".modal-content").css("display","none");
             $(".login-error").css("display","flex");
             $(".menu-login p").text(loginStatus.username)
+            if(loginStatus.urlphoto){
+                $(".profile-photo").attr("src",loginStatus.urlphoto);
+            }else{
+                $(".profile-photo").attr("src","/res/img/user-default.jpg");
+            }
         }
     });
 }

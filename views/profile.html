@@ -29,7 +29,7 @@
         
         <div class="lateral-menu">
             <div class="img-user-menu">
-                <a href="/profile" class="profile-selected"><img src="/res/img/user-default.jpg" alt="" ></a>
+                <a href="/profile" class="profile-selected"><img src="/res/img/user-default.jpg" alt="" class="profile-photo" ></a>
             </div>
             <div class="lateral-menu-items">
                 <ul>
@@ -54,7 +54,7 @@
                     <a href="/my-pokemons"><img src="/res/img/my-pokemons.svg" alt=""> <p>Meus Pokemons</p>  </a>
                 </div>
                 <div class="img-user-menu-mobile items-menu-mobile-active" >
-                    <a href="/profile"><img src="/res/img/user-default.jpg" alt=""> <p></p> </a>
+                    <a href="/profile"><img src="/res/img/user-default.jpg" alt="" class="profile-photo"> <p></p> </a>
                 </div>
                  
               
@@ -72,19 +72,55 @@
             <div class="user-edit">
                 <h2>Usuário</h2>
                 <div class="username-edit">
-                    <p>Username</p>
-                    <img src="" alt="">
+                    <div><p>Username</p></div>
+                    <div><img src="/res/img/edit.svg" alt=""></div>
                 </div>
             </div>
             <div class="photo-edit">
-                <img src="" alt="">
-                <form action="" method="post">
-                    <input type="file">;
+                <div class="img-edit" id="mask">
+                    <div class="button-select-image">
+                        <img class="back-select-img" src="/res/img/button-select-img.svg" alt="">
+                        <img class="select-img" src="/res/img/photo.svg" alt="">
+                        <!-- <div><img src="/res/img/photo.svg" alt=""></div> -->
+                    </div>
+                    <div class="image">
+                        <img src="/res/img/user-default.jpg" alt="" class="profile-photo" >
+                    </div>
+
+                    
+                </div>
+                
+                <p></p>
+                <form action="/user/changeimage" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="thumb-width" class="thumb-width">
+                    <input type="hidden" name="thumb-height" class="thumb-height">
+                    <input type="hidden" name="cropp-width" class="cropp-width">
+                    <input type="hidden" name="cropp-height" class="cropp-height">
+                    <input type="hidden" name="cropp-top" class="cropp-top">
+                    <input type="hidden" name="cropp-left" class="cropp-left">
+                    <input id="select-file" type="file" accept="image/png, image/jpeg" name="select-image">;
+                    
                 </form>
                 
             </div>
         </div>    
 
+
+    </div>
+
+    <div class="modal-selected-img-bg">
+        <div class="modal-selected-img">
+            <div class="selected-img">
+                <div class="selector">
+                    <div class="selector-size"></div>
+                </div>
+                <img src="/res/img/user-default.jpg" alt="">
+            </div>
+            <div class="buttons-modal-selected-img">
+                <button class="cancel">Cancelar</button>
+                <button class="confirm">Confirmar</button>
+            </div>
+        </div>
 
     </div>
     <div class="options-user-bg options-user-animate">
@@ -107,6 +143,8 @@
                 </div>
             </a>
     </div>
+
+    
    
 
 

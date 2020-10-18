@@ -127,7 +127,117 @@
                 ];
             }
 
-        }     
+        }  
+        
+        
+
+        public static function uploadImage($file){
+            if (isset($file['name']) && $file['error'] == 0 && isset($_SESSION['iduser'])){
+                $typeFile = explode("/",$file['type']);
+                $typeFile = $typeFile[0];
+                if($typeFile=="image"){
+                    $tmpFile= $file['tmp_name'];
+                    $extension = pathinfo($file['name'],PATHINFO_EXTENSION);
+                    $extension = strtolower($extension);
+                    if ( strstr ( '.jpg;.jpeg;.png', $extension ) ){
+                        $imageName = $_SESSION['iduser'] . "." .$extension;
+                        $directory = "res". DIRECTORY_SEPARATOR ."img" . DIRECTORY_SEPARATOR . "user-profile-photo" . DIRECTORY_SEPARATOR . "tmp";
+                        $directoryImg = $directory . DIRECTORY_SEPARATOR . $imageName;
+                        if (\move_uploaded_file($tmpFile,$directoryImg)){
+                            return $directoryImg;
+                        }
+                    }
+
+                }    
+            }
+        }
+
+        public static function croppImage($directory){
+            $newDirectory = "res". DIRECTORY_SEPARATOR ."img" . DIRECTORY_SEPARATOR . "user-profile-photo";
+            if($directory != NULL && $directory != "" && isset($_SESSION['iduser'])){
+                $thumbWidth = (float)$_POST['thumb-width'];
+                $thumbHeight = (float)$_POST['thumb-height'];
+                $croppWidth = (float)$_POST['cropp-width'];
+                $croppHeight =(float) $_POST ['cropp-height'];
+                $croppTop = (float)$_POST['cropp-top'];
+                $croppLeft = (float)$_POST['cropp-left'];
+
+                list($originalWidth,$originalHeight) = getimagesize($directory);
+
+                $differenceWidth =  $originalWidth - $thumbWidth; 
+                $differenceHeight =  $originalHeight - $thumbHeight; 
+
+                $dividerWidth = $thumbWidth/100; 
+                $dividerHeight = $thumbHeight/100;
+                
+                $percentCroppWidth = $croppWidth/$dividerWidth;
+                $percentCroppHeight = $croppHeight/$dividerHeight;
+                $percentCroppTop = $croppTop/$dividerHeight;
+                $percentCroppLeft = $croppLeft/$dividerWidth;
+                $x = $originalWidth * ($percentCroppLeft/100) ;
+                $y = $originalHeight * ($percentCroppTop/100);
+                $width = $originalWidth * ($percentCroppWidth/100);
+                $height = $originalHeight * ($percentCroppHeight/100);
+
+                $ext = pathinfo($directory, PATHINFO_EXTENSION);
+                $ext = strtolower($ext);
+                if($ext=="jpg"){
+                    $img = imagecreatefromjpeg($directory);
+                    $imgCropp =imagecrop($img, ['x' => $x, 'y' => $y, 'width' => $width, 'height' => $height]);
+                    if($imgCropp != FALSE){
+                        $newDirectory = $newDirectory.DIRECTORY_SEPARATOR.$_SESSION['iduser'].".jpg";
+                        imagejpeg($imgCropp,$newDirectory);
+                        imagedestroy($imgCropp); 
+                        $directoryHTML = str_replace(DIRECTORY_SEPARATOR,"/",$newDirectory);
+                        $sql = new Sql();
+                        $sql->query("UPDATE tb_user SET urlphoto = :URLPHOTO WHERE iduser = :IDUSER",[
+                            ":URLPHOTO" => $directoryHTML,
+                            ":IDUSER" => $_SESSION['iduser']
+                        ]);  
+                    }
+                    imagedestroy($img);
+
+                }
+                if($ext=="jpeg"){
+                    $img = imagecreatefromjpeg($directory);
+                    $imgCropp =imagecrop($img, ['x' => $x, 'y' => $y, 'width' => $width, 'height' => $height]);
+                    if($imgCropp != FALSE){
+                        $newDirectory = $newDirectory.DIRECTORY_SEPARATOR.$_SESSION['iduser'].".jpg";
+                        imagejpeg($imgCropp,$newDirectory);
+                        imagedestroy($imgCropp); 
+                        $directoryHTML = str_replace(DIRECTORY_SEPARATOR,"/",$newDirectory);
+                        $sql = new Sql();
+                        $sql->query("UPDATE tb_user SET urlphoto = :URLPHOTO WHERE iduser = :IDUSER",[
+                            ":URLPHOTO" => $directoryHTML,
+                            ":IDUSER" => $_SESSION['iduser']
+                        ]); 
+                    }
+                    imagedestroy($img);
+
+                }
+                if($ext=="png"){
+                    $img = imagecreatefrompng($directory);
+                    $imgCropp =imagecrop($img, ['x' => $x, 'y' => $y, 'width' => $width, 'height' => $height]);
+                    if($imgCropp != FALSE){
+                        $newDirectory = $newDirectory.DIRECTORY_SEPARATOR.$_SESSION['iduser'].".jpg";
+                        imagejpeg($imgCropp,$newDirectory);
+                        imagedestroy($imgCropp);
+                        $directoryHTML = str_replace(DIRECTORY_SEPARATOR,"/",$newDirectory);
+                        $sql = new Sql();
+                        $sql->query("UPDATE tb_user SET urlphoto = :URLPHOTO WHERE iduser = :IDUSER",[
+                            ":URLPHOTO" => $directoryHTML,
+                            ":IDUSER" => $_SESSION['iduser']
+                        ]);
+                    }
+                    imagedestroy($img);
+
+                }
+
+                unlink($directory);
+                
+
+            }
+        }
 
     }
     

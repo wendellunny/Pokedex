@@ -116,6 +116,19 @@ $app->get("/getmypokemons",function(){
     } 
 });
 
+$app->post("/user/changeimage",function(){
+    header('Content-Type: application/json');
+    
+    // $ex = pathinfo($_FILES['select-image']['name'],PATHINFO_EXTENSION);
+    
+    
+    //  echo json_encode($ex);
+    $directoryImg = User::uploadImage($_FILES['select-image']);
+    User::croppImage($directoryImg);
+    //  echo json_encode( getimagesize("res".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."user-profile-photo".DIRECTORY_SEPARATOR."tmp".DIRECTORY_SEPARATOR."8.jpg") );
+    
+});
+
 
 
 

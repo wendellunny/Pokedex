@@ -1,8 +1,4 @@
 var userData;
-
-
-
-
 $(function(){
     $.ajax({
         url:"/verifylogin",
@@ -11,11 +7,12 @@ $(function(){
     }).done(function(data){
         $(".menu-username p").text(data.username);
         $(".img-user-menu-mobile p").text(data.username); 
+        if(data.urlphoto){
+            $(".profile-photo").attr("src",data.urlphoto);
+        }else{
+            $(".profile-photo").attr("src","/res/img/user-default.jpg");
+        }
     });
-
-   
-
-    
 
     function loadImageDetails(formLink){
         $.ajax({
@@ -66,14 +63,9 @@ $(function(){
             $(".name-pokemon").text(data.forms[0].name);
             for(i=0;i<data.abilities.length;i++){
                 $(".ability-"+(i+1)).text(data.abilities[i].ability.name);
-            }
-    
-            
-            loadImageDetails(data.forms[0].url);
-            
+            }        
+            loadImageDetails(data.forms[0].url); 
         });
-         
-        
     });
 
     $(document).on("click",".add",function(){
@@ -119,9 +111,176 @@ $(function(){
         showHideOptions();
     });
 
-
-
     // User 
+
+    // profile   
+    $("#select-file").change(function(e){
+        var type = this.files[0].type;
+        type = type.split("/")[0];
+        if(type=="image"){
+            $(".photo-edit p").text("");
+            var r= new FileReader();
+            r.readAsDataURL($("#select-file")[0].files[0]);
+            r.onload = function(e){
+                $(".modal-selected-img-bg").css("display","flex");
+                $(".selected-img img").attr("src", e.target.result); 
+            }
+        }else{
+            this.value = null;
+            $(".photo-edit p").text("Arquivo Inválido, Tente Novamente");
+        }
+        
+        
+    });
+
+    $(".confirm").click(function(){
+        $(".thumb-width").attr("value",$(".selected-img").width());
+        $(".thumb-height").attr("value",$(".selected-img").height());
+        $(".cropp-width").attr("value",$(".selector").width());
+        $(".cropp-height").attr("value",$(".selector").height());
+        $(".cropp-top").attr("value",($(".selector").offset().top - $(".selected-img").offset().top));
+        $(".cropp-left").attr("value",($(".selector").offset().left - $(".selected-img").offset().left));
+        $(".photo-edit form").submit();
+    });
+
+
+
+    $(".cancel").click(function(){
+        $(".modal-selected-img-bg").css("display","none");
+        $("#select-file").val("");    
+    });
+
+    $(".select-img").click(function(e){
+        $("#select-file").trigger('click');
+    });
+    var mousePositionX ;
+    var mousePositionY ;
+    // $(".selector").on("mousemove",function(){
+    //     $("body").css("cursor","none");    
+    // });
+   
+    
+    $(".selector").on("mousedown",function(event){
+        if (event.target != this) return;
+        mousePositionX = event.offsetX;
+        mousePositionY = event.offsetY;
+        
+        $(document).on("mousemove",function(e){
+            var selectorMoveLeft = (e.clientX - $(".modal-selected-img").offset().left)-mousePositionX; 
+            var selectorMoveTop = (e.clientY - $(".modal-selected-img").offset().top)-mousePositionY;
+            if(selectorMoveLeft > -1 && selectorMoveLeft < ($(".selected-img").width() - $(".selector").width())-2 ){
+                $(".selector").css("left",selectorMoveLeft );
+            }
+            if(selectorMoveTop >-1 && selectorMoveTop < ($(".selected-img").height() - $(".selector").height())-2 ){
+                $(".selector").css("top",selectorMoveTop);
+            }
+            
+           
+          
+            // $(".selector").css("top",e.pageY);
+            
+            $(document).on("mouseup",function(){
+                $(document).off("mousemove");   
+            })
+           
+        });
+        
+        
+    }).on("mouseup",function(){
+        $(document).off("mousemove");
+        
+    });
+
+    $(".selector-size").on("mousedown",function(e){
+        if (e.target != this) return;
+        yAnterior = $(".selector-size").offset().top;
+        xAnterior = $(".selector-size").offset().left;
+        mousePositionX = e.offsetX;
+        mousePositionY = e.offsetY;
+        $(document).on("mousemove",function(event){
+            var sizeMoveLeft =(event.pageX - $(".modal-selected-img").offset().left) - (mousePositionX-5);
+            var sizeMoveTop =  (event.pageY - $(".modal-selected-img").offset().top) - (mousePositionY+5);
+            if(sizeMoveLeft > -1 && sizeMoveLeft < ($(".selected-img").width() - $(".selector").width())-2 ){
+                $(".selector").css("left", sizeMoveLeft );
+            }
+            if(sizeMoveTop >-1 && sizeMoveTop < ($(".selected-img").height() - $(".selector").height())-2 ){
+                $(".selector").css("top", sizeMoveTop);
+            }
+            
+
+           
+            
+            yAtual = $(".selector-size").offset().top;
+            xAtual = $(".selector-size").offset().left;
+            if(yAtual<yAnterior && xAtual<xAnterior){
+                var widthQuadrado = $(".selector").width();
+                var heightQuadrado = $(".selector").height();
+                move = yAnterior-yAtual;
+                $(".selector").width(widthQuadrado+move);
+                $(".selector").height(heightQuadrado+move);
+
+
+     
+            }
+            if(yAtual>yAnterior && xAtual>xAnterior){
+                var widthQuadrado = $(".selector").width();
+                var heightQuadrado = $(".selector").height();
+                move = yAnterior-yAtual;
+                $(".selector").width(widthQuadrado+move);
+                $(".selector").height(heightQuadrado+move);
+
+
+     
+            }
+            // console.log(xAtual - xAnterior);
+            // console.log(yAtual - yAnterior);
+            xAnterior = xAtual;
+            yAnterior = yAtual;
+            $(document).on("mouseup",function(){
+                $(document).off("mousemove");
+            }); 
+            
+            
+        }).on("mouseup",function(){
+            $(document).off("mousemove");
+        });
+
+    });
+
+    $(".photo-edit form").submit(function(){
+        // var files =$("#select-file").prop('files')[0];
+        formData = new FormData(this);
+        // formData.append('file',files);
+        
+        $.ajax({
+            url: "/user/changeimage",
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            cache: false,
+            contentType: false,
+            processData: false
+            
+        }).done(function(data){
+    
+        });
+        location.reload();
+        return false; 
+        
+       
+    });
+    // $(document).on("mousedown",function(event){
+    //     $(document).on("mousemove",function(e){
+    //         console.log("X: "+e.pageX);
+    //         console.log("Y: "+e.pageY);
+    //     });
+        
+    // }).on("mouseup",function(){
+    //     $(document).off("mousemove");
+    // });
+  
+    
+
 
 
 
