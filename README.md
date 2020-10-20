@@ -1,4 +1,13 @@
 # Pokedex Online
+<style>
+    div{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+</style>
+<div>
 This project aims to recreate the Pokedex of the Pokemon anime, in order to practice web development.
 <img src="ImgReadme.jpg">
 <img src="previewHome.jpg">
@@ -17,3 +26,5 @@ This project aims to recreate the Pokedex of the Pokemon anime, in order to prac
 <br>
 <h2>Project Language</h2>
 <p>Portuguese - Brazil (Pt-Br)</p>
+</div>
+
