@@ -29,6 +29,9 @@ function refreshUser(){
             }else{
                 $(".profile-photo").attr("src","/res/img/user-default.jpg");
             }
+            $(".hero a").attr("href","/my-pokemons");
+        }else{
+            $(".hero a").click(loginOpen);  
         }
     });
 }

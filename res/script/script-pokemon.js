@@ -272,6 +272,7 @@ $(function(){
         
        
     });
+    var valError;
     $(".username-edit-form").submit(function(){
 
         $.ajax({
@@ -283,21 +284,18 @@ $(function(){
         }).done(function(data){
             if(data.status){
                 location.reload();
+            }else{
+                valError = $("#user-name").val()
+                $("#user-name").addClass("user-name-error");
+               
             }
-            
-            
-            
-            
-            
         });
        
-        return false;
-         
-        
-        
-        
+        return false;  
        
     });
+ 
+ 
 
     $(".username-edit img").click(function(){
         $(".user-name p").css("display","none");
