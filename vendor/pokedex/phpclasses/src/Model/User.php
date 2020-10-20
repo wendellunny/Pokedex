@@ -238,6 +238,36 @@
 
             }
         }
+        public static function verifyUsername($newname):bool{
+            $sql = new Sql();
+            $results=$sql->select("SELECT username from tb_user where username = :USER",[
+                ":USER" => $newname
+            ]); 
+         
+            if ($newname==""){
+                return false;
+    
+            }else if(isset($results["username"])){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        public static function changeUserName($newname):bool{
+            $sql=new Sql();
+            if(User::verifyUsername($newname)){
+                $sql->query("UPDATE tb_user SET username = :USERNAME WHERE iduser=:IDUSER",[
+                    ":USERNAME" => $newname,
+                    ":IDUSER" => $_SESSION['iduser']
+                ] 
+                );
+                return true;
+            }else{
+                return false;
+            }
+           
+        }
 
     }
     

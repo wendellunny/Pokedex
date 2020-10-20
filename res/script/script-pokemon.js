@@ -7,6 +7,9 @@ $(function(){
     }).done(function(data){
         $(".menu-username p").text(data.username);
         $(".img-user-menu-mobile p").text(data.username); 
+        $(".user-name p").text(data.username);
+        $(".user-name input").val(data.username);
+        $("title").text(data.username);
         if(data.urlphoto){
             $(".profile-photo").attr("src",data.urlphoto);
         }else{
@@ -269,17 +272,48 @@ $(function(){
         
        
     });
-    // $(document).on("mousedown",function(event){
-    //     $(document).on("mousemove",function(e){
-    //         console.log("X: "+e.pageX);
-    //         console.log("Y: "+e.pageY);
-    //     });
+    $(".username-edit-form").submit(function(){
+
+        $.ajax({
+            url: "/user/changeusername",
+            type: "POST",
+            data: $(this).serialize(),
+            dataType: "json",
+            
+        }).done(function(data){
+            if(data.status){
+                location.reload();
+            }
+            
+            
+            
+            
+            
+        });
+       
+        return false;
+         
         
-    // }).on("mouseup",function(){
-    //     $(document).off("mousemove");
-    // });
-  
-    
+        
+        
+       
+    });
+
+    $(".username-edit img").click(function(){
+        $(".user-name p").css("display","none");
+        $(".user-name form").css("display","block");
+        $(".user-name input").focus();
+        $(this).css("display","none");
+
+    });
+
+    $(".username-edit-cancel").click(function(){
+        $(".user-name p").css("display","block");
+        $(".user-name form").css("display","none");
+        $(".username-edit img").css("display","block");     
+    });
+
+   
 
 
 

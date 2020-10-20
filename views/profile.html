@@ -72,7 +72,19 @@
             <div class="user-edit">
                 <h2>Usuário</h2>
                 <div class="username-edit">
-                    <div><p>Username</p></div>
+                    <div class="user-name">
+                        <p>Username</p>
+                        <form action="/user/changeusername" method="post" class="username-edit-form">
+                            <div>
+                                <input type="text" name="input-username-edit" id="" placeholder="Editar Nome">
+                            </div>
+                            <div>
+                                <button class="username-edit-ok" type="submit">OK</button>
+                                <button class="username-edit-cancel" type="button">Cancelar</button>
+                            </div>
+                            
+                        </form>
+                    </div>
                     <div><img src="/res/img/edit.svg" alt=""></div>
                 </div>
             </div>

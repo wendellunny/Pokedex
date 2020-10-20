@@ -129,6 +129,12 @@ $app->post("/user/changeimage",function(){
     
 });
 
+$app->post("/user/changeusername",function(){
+    $status['status'] = User::changeUserName($_POST['input-username-edit']);  
+    header('Content-Type: application/json');
+    echo json_encode($status); 
+});
+
 
 
 
