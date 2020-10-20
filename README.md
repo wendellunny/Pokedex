@@ -7,7 +7,7 @@ This project aims to recreate the Pokedex of the Pokemon anime, in order to prac
 <h2>All Pokemons</h2>
 List of All Pokemons, accessible to the user
 <img src="previewAllPokemons.jpg">
-<h2>My Pokemons<h2>
+<h2>My Pokemons</h2>
 The user can also add pokemon to his personal pokedex
 <img src="previewMyPokemons.jpg">
 <br>
